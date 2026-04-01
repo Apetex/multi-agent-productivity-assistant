@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    "**/*.agent.md": true,
+    "**/globalStorage/**": true,
+    "**/.vscode/extensions/**": true
+  },
+  "search.exclude": {
+    "**/*.agent.md": true,
+    "**/globalStorage/**": true,
+    "**/.vscode/extensions/**": true
+  },
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.exclude": [
+    "**/*.agent.md",
+    "**/globalStorage/**",
+    "**/.vscode/extensions/**"
+  ]
+}
