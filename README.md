@@ -22,6 +22,8 @@ API:
 - `POST /chat` - orchestrator chat entry (JSON {"message": "..."})
 - `GET /health` - health check
 
+Database: SQLite (assistant.db)
+
 Docker:
 
 Build and run with docker-compose:
