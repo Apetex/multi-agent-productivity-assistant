@@ -1,5 +1,6 @@
 import re
 from typing import Dict, List
+from datetime import datetime
 
 
 def normalize_text(text: str) -> str:
@@ -191,3 +192,47 @@ def build_human_response(actions: List[Dict]) -> str:
         return "Request processed."
 
     return ". ".join(messages).capitalize() + "."
+
+
+def is_task_query(message: str) -> bool:
+    text = message.lower()
+    return "task" in text and any(word in text for word in ["what", "show", "list", "today"])
+
+
+def is_event_query(message: str) -> bool:
+    text = message.lower()
+    return any(word in text for word in ["event", "meeting", "schedule"]) and any(
+        word in text for word in ["what", "show", "list", "today"]
+    )
+
+
+def is_note_query(message: str) -> bool:
+    text = message.lower()
+    return "note" in text and any(word in text for word in ["what", "show", "list"])
+
+
+def is_today_query(message: str) -> bool:
+    return "today" in message.lower()
+
+def is_task_query(message: str) -> bool:
+    text = message.lower()
+    return (
+        "task" in text and any(word in text for word in ["what", "show", "list"])
+    ) or ("what are my tasks" in text)
+
+
+def is_event_query(message: str) -> bool:
+    text = message.lower()
+    return (
+        any(word in text for word in ["event", "events", "meeting", "meetings"])
+        and any(word in text for word in ["what", "show", "list"])
+    ) or ("what events" in text)
+
+
+def is_note_query(message: str) -> bool:
+    text = message.lower()
+    return "note" in text and any(word in text for word in ["what", "show", "list"])
+    
+    
+def is_today_query(message: str) -> bool:
+    return "today" in message.lower()

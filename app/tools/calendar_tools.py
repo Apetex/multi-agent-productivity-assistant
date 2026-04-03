@@ -40,3 +40,6 @@ def reschedule_event(db: Session, event_id: int, new_time: str):
 
 def check_conflicts(db: Session, start_time: str):
     return db.query(models.Event).filter(models.Event.start_time == start_time).all()
+
+def get_all_events(db: Session):
+    return db.query(models.Event).order_by(models.Event.created_at.desc()).all()

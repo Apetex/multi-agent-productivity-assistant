@@ -24,3 +24,6 @@ def summarize_notes(db: Session):
         "count": len(notes),
         "titles": [note.title for note in notes if note.title],
     }
+
+def get_all_notes(db: Session):
+    return db.query(models.Note).order_by(models.Note.created_at.desc()).all()

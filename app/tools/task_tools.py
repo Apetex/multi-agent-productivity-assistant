@@ -43,3 +43,6 @@ def complete_task(db: Session, task_id: int):
     db.commit()
     db.refresh(task)
     return task
+
+def get_all_tasks(db: Session):
+    return db.query(models.Task).order_by(models.Task.created_at.desc()).all()
