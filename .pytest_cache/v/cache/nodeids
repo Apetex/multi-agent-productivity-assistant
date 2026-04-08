@@ -1,0 +1,4 @@
+[
+  "tests/test_basic.py::test_chat_note",
+  "tests/test_basic.py::test_health"
+]
