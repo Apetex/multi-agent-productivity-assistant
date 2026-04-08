@@ -166,3 +166,23 @@ frontend/
 ```bash
 docker compose up --build
 ```
+
+---
+
+## Recent Changes
+
+**Changelog**
+
+- **2026-04-08**: Added this "Recent Changes" section. Replace the placeholder entries below with the actual list of files you edited and a short description of each change.
+
+**How to update**
+
+- Edit this file and replace the example entries with your real changes.
+- Or, tell me the files you changed and I'll update this section for you.
+
+**Example entry format**
+
+- `app/main.py`: Updated `/chat` routing to route queries to `QueryHandler`
+- `app/agents/notes_agent.py`: Added note-saving logic and validation
+- `frontend/src/App.jsx`: UI: updated chat input and message rendering
+
